@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>X-mas Movie Apocalypse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              christmas: {
+                dark: '#0f172a', // slate-900
+                darker: '#020617', // slate-950
+                red: '#991b1b', // red-800
+                brightRed: '#dc2626', // red-600
+                accent: '#f87171', // red-400
+              }
+            },
+            animation: {
+              'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+              'fade-in': 'fadeIn 1s ease-in forwards',
+            },
+            keyframes: {
+              shake: {
+                '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+                '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+                '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+                '40%, 60%': { transform: 'translate3d(4px, 0, 0)' }
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+      
+      body {
+        background-color: #020617;
+        color: #e2e8f0;
+        font-family: 'Roboto Mono', monospace;
+      }
+
+      h1, h2, h3, .cinzel {
+        font-family: 'Cinzel', serif;
+      }
+
+      /* Snow Animation */
+      .snowflake {
+        position: fixed;
+        top: -10px;
+        z-index: 0;
+        color: #fff;
+        opacity: 0.8;
+        font-size: 1em;
+        user-select: none;
+        pointer-events: none;
+        animation-name: snow-fall;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes snow-fall {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(100vh); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
