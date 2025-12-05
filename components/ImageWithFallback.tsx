@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Upload } from 'lucide-react';
+import { Image } from 'lucide-react';
 
 interface ImageWithFallbackProps {
   src: string;
