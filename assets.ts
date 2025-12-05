@@ -2,20 +2,20 @@
 /**
  * GAME ASSETS CONFIGURATION
  * 
- * IMPORTANT: 
- * Move your .jpg image files into a folder named 'public' in your project root.
- * This ensures they are packaged correctly when the game is built.
+ * Using new URL(path, import.meta.url).href is the standard way to reference 
+ * static assets in ESM. It works natively in browsers and tells Vite to 
+ * bundle the file during the build.
  */
 
 export const ASSETS = {
   // Level 1: Mäkikotka
-  LEVEL_1_PUZZLE: './makikotka.jpg',
+  LEVEL_1_PUZZLE: new URL('./makikotka.jpg', import.meta.url).href,
 
   // Level 2: Pirunpelto & Pallo
-  LEVEL_2_LEFT: './pirunpelto.jpg',
-  LEVEL_2_RIGHT: './pallo.jpg',
+  LEVEL_2_LEFT: new URL('./pirunpelto.jpg', import.meta.url).href,
+  LEVEL_2_RIGHT: new URL('./pallo.jpg', import.meta.url).href,
 
   // Level 3: Rocky vs Apollo & Math
-  LEVEL_3_LEFT: './apollo.jpg',
-  LEVEL_3_RIGHT: './ball.jpg',
+  LEVEL_3_LEFT: new URL('./apollo.jpg', import.meta.url).href,
+  LEVEL_3_RIGHT: new URL('./ball.jpg', import.meta.url).href,
 };
